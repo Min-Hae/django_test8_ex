@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>담당 직원</h2>
+{%for s in jikwon%}
+직원명 : {{s.jikwon_name}} &nbsp;
+직급 : {{s.jikwon_jik}}<br>
+부서명 : {{s.buser_name}}
+부서전화 : {{s.buser_tel}}<br>
+{% if s.jikwon_gen == '남' %}
+<img src = "/static/images/2.png"><br>
+{%else%}
+<img src = "/static/images/1.png"><br>
+{% endif %}
+근무년수 : {{s.jikwon_geun}}
+평점 : 
+{%if s.jikwon_rating == 'a' %}
+최우수
+{%elif s.jikwon_rating == 'b' %}
+우수
+{%elif s.jikwon_rating == 'c' %}
+일반
+
+{% endif %}
+{%endfor%}
+</body>
+</html>
